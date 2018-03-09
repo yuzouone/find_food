@@ -1,0 +1,62 @@
+/*
+* @Author: Administrator
+* @Date:   2018-03-05 11:45:59
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-03-05 11:50:12
+*/
+*{
+    margin: 0;padding: 0;border: 0;
+    list-style:none
+}
+img{
+    width:100px
+}
+.main{
+    width:100%;
+    position:fixed;
+    top:0px;
+    z-index:999;
+    background: #fff
+}
+.img_left{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.img_left li{
+    margin-right:10px;
+    display: flex;
+    flex-direction:column;
+    padding:0 5px 10px 5px;
+    margin-top:5px;
+}
+.img_right{
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.img_right li{
+    margin-right:10px;
+    display: flex;
+    flex-direction:column;
+    padding:0 5px 10px 5px;
+    margin-top:5px;
+}
+.center{
+    text-align: center;
+}
+.in_img img{
+    width:150px;
+}
+.out_img img{
+    width:150px;
+}
+.button{
+    width:120px;
+    position: relative;
+}
+button{
+    position:absolute;
+    top: 60px;
+    left: 16px;
+}

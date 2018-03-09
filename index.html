@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container main">
+        <table class="table table-bordered table-hover table-condensed main">
+            <tr>
+                <th>用户</th>
+                <th>进入</th>
+                <th>进入时间</th>
+                <th>出门</th>
+                <th>出门时间</th>
+                <th>搜索</th>
+            </tr>
+            <tr class="main_tr">
+                <td>张三</td>
+                <td>
+                    <img src="images/01.jpg" alt="">
+                    <img src="images/01.jpg" alt="">
+                </td>
+                <td>10:20:30</td>
+                <td>
+                    <img src="images/01.jpg" alt="">
+                    <img src="images/01.jpg" alt="">
+                </td>
+                <td>11:20:30</td>
+                <td>搜索</td>
+            </tr>
+            <tr class="main_tr">
+                <td>李四</td>
+                <td>
+                    <img src="images/02.jpg" alt="">
+                    <img src="images/02.jpg" alt="">
+                </td>
+                <td>10:22:30</td>
+                <td>
+                    <img src="images/02.jpg" alt="">
+                    <img src="images/02.jpg" alt="">
+                </td>
+                <td>10:30:30</td>
+                <td>搜索</td>
+            </tr>
+            <tr class="main_tr">
+                <td>王五</td>
+                <td>
+                    <img src="images/03.jpg" alt="">
+                    <img src="images/03.jpg" alt="">
+                </td>
+                <td>10:40:30</td>
+                <td>
+                    <img src="images/03.jpg" alt="">
+                    <img src="images/03.jpg" alt="">
+                </td>
+                <td>11:00:30</td>
+                <td>搜索</td>
+            </tr>
+            <tr class="main_tr">
+                <td>田七</td>
+                <td>
+                    <img src="images/04.jpg" alt="">
+                    <img src="images/04.jpg" alt="">
+                </td>
+                <td>12:20:30</td>
+                <td>
+                    <img src="images/04.jpg" alt="">
+                    <img src="images/04.jpg" alt="">
+                </td>
+                <td>13:20:30</td>
+                <td>搜索</td>
+            </tr>
+        </table>
+    </div>
+<script>
+    $(function(){
+        console.log(11);
+        $('.main_tr').on('click',function(){
+            //获取数据
+            var name = $(this).children().eq(0).text();
+            var in_img1 = $(this).children().eq(1).children().eq(0).attr('src');
+            var in_img2 = $(this).children().eq(1).children().eq(1).attr('src');
+            var in_time = $(this).children().eq(2).text();
+            var out_img1 = $(this).children().eq(3).children().eq(0).attr('src');
+            var out_img2 = $(this).children().eq(3).children().eq(1).attr('src');
+            var out_time = $(this).children().eq(4).text();
+            window.location.href = 'exchange.html?name='+name+'&in_img1='+in_img1+'&in_img2='+in_img2+'&in_time='+in_time+'&out_img1='+out_img1+'&out_img2='+out_img2+'&out_time='+out_time;
+        });
+
+    })
+</script>
+</body>
+</html>

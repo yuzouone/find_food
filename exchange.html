@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/exchange.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <table class="table table-bordered table-hover table-condensed ">
+                <tr>
+                    <th>用户</th>
+                    <th>进入<span class="in_time">10:20:30</span></th>
+                    <th>出门<span class="out_time">11:20:30</span></th>
+                    <th>拿起商品</th>
+                    <th>放下商品</th>
+                    <th>支付商品</th>
+                    <th class="center">订单</th>
+                </tr>
+                <tr>
+                    <td class="name">张三</td>
+                    <td class="in_img">
+                        <img src="images/01.jpg" alt="">
+                        <img src="images/01.jpg" alt="">
+                    </td>
+                    <td class="out_img">
+                        <img src="images/01.jpg" alt="">
+                        <img src="images/01.jpg" alt="">
+                    </td>
+                    <td class="ware"></td>
+                    <td class="down"></td>
+                    <td class="pay"></td>
+                    <td class="button"><button type="button" class="btn btn-success">发送订单</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-fluid content">
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover table-condensed">
+            <tr>
+                <th class="center">拿起</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="img_left">
+                        <li><span>1-6_2</span><p>2018-03-02 10:30:20</p><div><img src="images/04.jpg"><img src="images/04.jpg"></div></li>
+                        <li><span>2-3_3</span><p>2018-03-02 10:30:20</p><div><img src="images/05.jpg"><img src="images/05.jpg"></div></li>
+                        <li><span>3-2_1</span><p>2018-03-02 10:30:20</p><div><img src="images/06.jpg"><img src="images/06.jpg"></div></li>
+                        <li><span>A2</span><p>2018-03-02 10:30:20</p><div><img src="images/06.jpg"><img src="images/06.jpg"></div></li>
+                        <li><span>B4</span><p>2018-03-02 10:30:20</p><div><img src="images/08.jpg"><img src="images/08.jpg"></div></li>
+                        <li><span>D2</span><p>2018-03-02 10:30:20</p><div><img src="images/04.jpg"><img src="images/04.jpg"></div></li>
+                        <li><span>F4</span><p>2018-03-02 10:30:20</p><div><img src="images/05.jpg"><img src="images/05.jpg"></div></li>
+                        <li><span>H3</span><p>2018-03-02 10:30:20</p><div><img src="images/08.jpg"><img src="images/08.jpg"></div></li>
+                        <li><span>H3</span><p>2018-03-02 10:30:20</p><div><img src="images/09.jpg"><img src="images/09.jpg"></div></li>
+                    </ul>
+                </td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover table-condensed">
+            <tr>
+                <th class="center">放下</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="img_right">
+                        <li><span>1-6_3</span><p>2018-03-02 10:30:20</p><div><img src="images/05.jpg"><img src="images/05.jpg"></div></li>
+                        <li><span>2-3_1</span><p>2018-03-02 10:30:20</p><div><img src="images/01.jpg"><img src="images/01.jpg"></div></li>
+                        <li><span>3-2_1</span><p>2018-03-02 10:30:20</p><div><img src="images/02.jpg"><img src="images/02.jpg"></div></li>
+                        <li><span>A2</span><p>2018-03-02 10:30:20</p><div><img src="images/03.jpg"><img src="images/03.jpg"></div></li>
+                        <li><span>B4</span><p>2018-03-02 10:30:20</p><div><img src="images/08.jpg"><img src="images/08.jpg"></div></li>
+                        <li><span>D2</span><p>2018-03-02 10:30:20</p><div><img src="images/04.jpg"><img src="images/04.jpg"></div></li>
+                        <li><span>F4</span><p>2018-03-02 10:30:20</p><div><img src="images/05.jpg"><img src="images/05.jpg"></div></li>
+                        <li><span>H3</span><p>2018-03-02 10:30:20</p><div><img src="images/07.jpg"><img src="images/07.jpg"></div></li>
+                    </ul>
+                </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+<script>
+    $(function(){
+        //获取域名
+        var url = window.location.href;
+        url = url.split("?");
+　　　　url = url[1];
+        console.log(url);
+        var data = url.split('&');
+        var name = data[0].split('=')[1];
+        name = decodeURI(name);
+        var in_img1 = data[1].split('=')[1];
+        var in_img2 = data[2].split("=")[1];
+        var in_time = data[3].split("=")[1];
+        var out_img1 = data[4].split('=')[1];
+        var out_img2 = data[5].split("=")[1];
+        var out_time = data[6].split("=")[1];
+        $('.name').text(name);
+        $('.in_img').children().eq(0).attr('src',in_img1);
+        $('.in_img').children().eq(1).attr('src',in_img2);
+        $('.in_time').text(in_time);
+        $('.out_img').children().eq(0).attr('src',out_img1);
+        $('.out_img').children().eq(1).attr('src',out_img2);
+        $('.out_time').text(out_time);
+        //拿起变颜色
+        var ware_text = '';
+        $('.img_left li').on('click',function(){
+            if($(this).css('background-color')=="rgb(0, 128, 0)"){
+                $(this).css('background','#f5f5f5');
+                var text = $(this).children('span').text();
+                console.log(text);
+                var warearr = $('.ware').text();
+                warearr = warearr.split('、');
+                console.log(warearr);
+                for(var i=0;i<warearr.length;i++){
+                    if(warearr[i]==text){
+                        /*console.log(warearr);
+                        console.log(i);*/
+                        warearr.splice(i,1);
+                    }
+                }
+                console.log(warearr);
+                var ware_text2 = '';
+                for(var i=0;i<warearr.length;i++){
+                    ware_text2=ware_text2+warearr[i]+'、';
+                }
+                 console.log(11);
+                 console.log(ware_text2);
+                 ware_text2 = ware_text2.substring(0,ware_text2.length-1);
+                 console.log(ware_text2);
+                $('.ware').text(ware_text2);
+                //两边抵消函数
+                exchange();
+            }else{
+                $(this).css('background','green');
+                var text = $(this).children('span').text();
+                console.log($('.ware').text());
+                if($('.ware').text()==''){
+                    ware_text=text;
+                }else{
+                    ware_text = $('.ware').text();
+                    ware_text=ware_text+'、'+text;
+                }
+                $('.ware').text(ware_text);
+                //两边抵消函数
+                exchange();
+            }
+        })
+        //放下变颜色
+        var down_text = '';
+        $('.img_right li').on('click',function(){
+            if($(this).css('background-color')=="rgb(0, 128, 0)"){
+                $(this).css('background','#f5f5f5');
+                var text = $(this).children('span').text();
+                console.log(text);
+                var warearr = $('.down').text();
+                warearr = warearr.split('、');
+                console.log(warearr);
+                for(var i=0;i<warearr.length;i++){
+                    if(warearr[i]==text){
+                        /*console.log(warearr);
+                        console.log(i);*/
+                        warearr.splice(i,1);
+                    }
+                }
+                console.log(warearr);
+                var down_text2 = '';
+                for(var i=0;i<warearr.length;i++){
+                    down_text2=down_text2+warearr[i]+'、';
+                }
+                 down_text2 = down_text2.substring(0,down_text2.length-1);
+                $('.down').text(down_text2);
+                //两边抵消函数
+                exchange();
+            }else{
+                /*判断拿起数据*/
+                var takearr = $('.ware').text();
+                takearr = takearr.split('、');
+                var a = '';
+                for(var i=0;i<takearr.length;i++){
+                    if(takearr[i].split('_')[0] == $(this).children('span').text().split('_')[0]&&takearr[i].split('_')[1]>=$(this).children('span').text().split('_')[1]){
+                        a=true ;
+                        break;
+                    }else{
+                        a = false;
+                    }
+                }
+                if(a==true){//判断左右是否匹配
+                    $(this).css('background','green');
+                    var text = $(this).children('span').text();
+                    console.log($('.down').text());
+                    if($('.down').text()==''){
+                        down_text=text;
+                    }else{
+                        down_text = $('.down').text();
+                        down_text=down_text+'、'+text;
+                    }
+                    $('.down').text(down_text);
+                    //两边抵消函数
+
+                    exchange();
+                }else{
+                    alert('左右数据不匹配')
+                }
+
+            }
+        })
+        //获取头部高度
+        var top_table= $('.main').height();
+        top_table = top_table+'px';
+        $('.content').css('marginTop',top_table);
+        //两边抵消函数
+        function exchange(){
+            var take = $('.ware').text();
+            var down_text2 = $('.down').text();
+            take = take.split('、');
+            down_text2 = down_text2.split('、');
+            var pay_text = '';
+            for(var i =0;i<down_text2.length;i++){
+                for(var j=0;j<take.length;j++){
+                    /*if(down_text2[i] == take[j]){//抵消
+                        take.splice(j, 1)
+                    }else{//不抵消
+                    }*/
+
+                    if(down_text2[i].split('_')[0] == take[j].split('_')[0]){
+                        if(down_text2[i].split('_')[1]<take[j].split('_')[1]){
+                            var ff = take[j].split('_')[1]-down_text2[i].split('_')[1];
+                            var gg = take[j].split('_')[0]+'_'+ff;
+                            take.splice(j, 1,gg)
+                        }else if(down_text2[i].split('_')[1]==take[j].split('_')[1]){
+                            take.splice(j, 1);
+                        }
+                    }
+                }
+            }
+            for(var i=0;i<take.length;i++){
+                pay_text = pay_text+take[i]+'、'
+            }
+            pay_text = pay_text.substring(0,pay_text.length-1);
+            $('.pay').text(pay_text);
+
+        }
+    })
+</script>
+</body>
+</html>
